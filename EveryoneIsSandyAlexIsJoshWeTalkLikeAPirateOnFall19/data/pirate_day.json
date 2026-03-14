@@ -1,0 +1,84 @@
+{
+  "$schema": "https://smapi.io/schemas/content-patcher.json",
+  "Changes": [
+    {
+      "Action": "EditData",
+      "Target": "TheContentModdersYearnForThe/Foreach",
+      "Entries": {
+        // Pirate Day
+        "{{ModId}}_PirateDay_Dialogue": {
+          "Target": "Characters/Dialogue/",
+          "TargetIsPrefix": true,
+          "Modify": [
+            {
+              "Fields": [
+                {
+                  "Match": "(.+)",
+                  "Split": "#\\$[be]#"
+                }
+              ],
+              "RandValues": [
+                "{{i18n:Pirate.0}}$1",
+                "{{i18n:Pirate.1}}$1",
+                "{{i18n:Pirate.2}}$1",
+                "{{i18n:Pirate.3}}$1",
+                "{{i18n:Pirate.4}}$1",
+                "{{i18n:Pirate.5}}$1",
+                "{{i18n:Pirate.6}}$1",
+              ]
+            },
+          ]
+        },
+        "{{ModId}}_PirateDay_Events_Speak": {
+          "Target": "Data/Events/",
+          "TargetIsPrefix": true,
+          "Modify": [
+            {
+              "Fields": [
+                {
+                  "Match": "(speak [^ ]+ \")([^\"]+\")",
+                  "Split": "/"
+                }
+              ],
+              "RandValues": [
+                "$1{{i18n:Pirate.0}}$2",
+                "$1{{i18n:Pirate.1}}$2",
+                "$1{{i18n:Pirate.2}}$2",
+                "$1{{i18n:Pirate.3}}$2",
+                "$1{{i18n:Pirate.4}}$2",
+                "$1{{i18n:Pirate.5}}$2",
+                "$1{{i18n:Pirate.6}}$2",
+              ]
+            },
+          ]
+        },
+        "{{ModId}}_PirateDay_Events_BE": {
+          "Target": "Data/Events/",
+          "TargetIsPrefix": true,
+          "Modify": [
+            {
+              "Fields": [
+                {
+                  "Match": "(#\\$[be]#)([^\"]+\")",
+                  "Split": "/"
+                }
+              ],
+              "RandValues": [
+                "$1{{i18n:Pirate.0}}$2",
+                "$1{{i18n:Pirate.1}}$2",
+                "$1{{i18n:Pirate.2}}$2",
+                "$1{{i18n:Pirate.3}}$2",
+                "$1{{i18n:Pirate.4}}$2",
+                "$1{{i18n:Pirate.5}}$2",
+                "$1{{i18n:Pirate.6}}$2",
+              ]
+            },
+          ]
+        },
+      },
+      "When": {
+        "IsTalkLikeAPirateDay": true
+      }
+    },
+  ]
+}

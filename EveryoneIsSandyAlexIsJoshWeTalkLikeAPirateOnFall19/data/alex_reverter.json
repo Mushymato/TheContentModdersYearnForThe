@@ -1,0 +1,51 @@
+{
+  "$schema": "https://smapi.io/schemas/content-patcher.json",
+  "Changes": [
+    {
+      "Action": "EditData",
+      "Target": "Strings/NPCNames",
+      "Entries": {
+        "Alex": "{{i18n:Josh}}"
+      }
+    },
+    {
+      "Action": "EditData",
+      "Target": "TheContentModdersYearnForThe/Foreach",
+      "Entries": {
+        // Joshed
+        "{{ModId}}_Joshed_Dialogues": {
+          "Precedence": 1,
+          "Target": "Characters/Dialogue/",
+          "TargetIsPrefix": true,
+          "Modify": [
+            {
+              "Fields": [
+                {
+                  "Match": "{{i18n:Alex}}",
+                  "Split": "(\\$[a-zA-Z]|\\[.+\\])"
+                }
+              ],
+              "Value": "[CharacterName Alex]"
+            },
+          ]
+        },
+        "{{ModId}}_Joshed_Events": {
+          "Precedence": 1,
+          "Target": "Data/Events/",
+          "TargetIsPrefix": true,
+          "Modify": [
+            {
+              "Fields": [
+                {
+                  "Match": "(\".+){{i18n:Alex}}(.+\")",
+                  "Split": "(\\[.+\\]|\/)"
+                }
+              ],
+              "Value": "$1[CharacterName Alex]$2"
+            },
+          ]
+        },
+      }
+    },
+  ]
+}

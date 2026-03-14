@@ -1,0 +1,14 @@
+{
+  "Alex": "Alex",
+  "Josh": "Josh",
+  "Pirate.0": "Ahoy, matey! ",
+  "Pirate.1": "Avast ye! ",
+  "Pirate.2": "Shiver me timbers! ",
+  "Pirate.3": "Arr! ",
+  "Pirate.4": "Walk the plank! ",
+  "Pirate.5": "Land ho! ",
+  "Pirate.6": "Yeehaw! wait I meant.. Arr! ",
+  // config
+  "config.SandificationLevel.name": "Sandification Level",
+  "config.TalkLikeAPirateEveryday.name": "Talk Like A Pirate Everyday"
+}

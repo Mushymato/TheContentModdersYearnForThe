@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <Import
+    Project="$(MSBuildUserExtensionsPath)/sdv.props"
+    Condition="Exists('$(MSBuildUserExtensionsPath)/sdv.props')"
+  />
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <LangVersion>default</LangVersion>
+    <EnableHarmony>true</EnableHarmony>
+    <ModZipPath>$(MSBuildThisFileDirectory)/../_releases</ModZipPath>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <Name>TheContentModdersYearnForThe</Name>
+    <Authors>mushymato</Authors>
+    <Description>Foreach/Sed/Etc</Description>
+    <UniqueId>mushymato.TheContentModdersYearnForThe</UniqueId>
+    <UpdateKeys>Nexus:44376,GitHub:Mushymato/TheContentModdersYearnForThe</UpdateKeys>
+    <Version>1.0.0</Version>
+    <BaseManifest>new</BaseManifest>
+    <MinimumApiVersion_Behavior>Update</MinimumApiVersion_Behavior>
+    <MinimumGameVersion_Behavior>UpdateFull</MinimumGameVersion_Behavior>
+    <Dependencies_VersionBehavior>Ignore</Dependencies_VersionBehavior>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Leclair.Stardew.ModManifestBuilder" Version="2.4.1" />
+    <PackageReference Include="Pathoschild.Stardew.ModBuildConfig" Version="4.4.0" />
+    <Reference Include="Newtonsoft.Json" Private="False">
+      <HintPath>$(GamePath)/smapi-internal/Newtonsoft.Json.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>

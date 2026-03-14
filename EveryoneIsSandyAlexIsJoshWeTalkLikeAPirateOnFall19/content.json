@@ -1,0 +1,45 @@
+{
+  "$schema": "https://smapi.io/schemas/content-patcher.json",
+  "Format": "2.8.0",
+  "ConfigSchema": {
+    "SandificationLevel": {
+      "AllowValues": "S,SS,SSS",
+      "Default": "SS",
+    },
+    "TalkLikeAPirateEveryday": {
+      "AllowValues": "true, false",
+      "Default": false,
+    }
+  },
+  "DynamicTokens": [
+    {
+      "Name": "IsTalkLikeAPirateDay",
+      "Value": true,
+      "When": {
+        "Season": "Fall",
+        "Day": 19
+      }
+    },
+    {
+      "Name": "IsTalkLikeAPirateDay",
+      "Value": true,
+      "When": {
+        "TalkLikeAPirateEveryday": true
+      }
+    }
+  ],
+  "Changes": [
+    {
+      "Action": "Include",
+      "FromFile": "data/sandifier.json"
+    },
+    {
+      "Action": "Include",
+      "FromFile": "data/alex_reverter.json"
+    },
+    {
+      "Action": "Include",
+      "FromFile": "data/pirate_day.json"
+    },
+  ]
+}

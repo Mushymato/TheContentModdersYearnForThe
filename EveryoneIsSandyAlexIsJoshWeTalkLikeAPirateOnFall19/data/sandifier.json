@@ -1,0 +1,130 @@
+{
+  "$schema": "https://smapi.io/schemas/content-patcher.json",
+  "Changes": [
+    {
+      "Action": "EditData",
+      "Target": "Data/Characters",
+      "Fields": {
+        "Sandy": {
+          "TextureName": "Sandy",
+          "MugShotSourceRect": {
+            "X": 0,
+            "Y": 0,
+            "Width": 16,
+            "Height": 24
+          },
+          "Size": {
+            "X": 16,
+            "Y": 32
+          }
+        }
+      },
+      "Priority": "Early"
+    },
+    {
+      "Action": "EditData",
+      "Target": "TheContentModdersYearnForThe/Foreach",
+      "Entries": {
+        // Everyone is Sandy (except Alex who is Josh)
+        "{{ModId}}_Sandifier": {
+          "Target": "Data/Characters",
+          "Filter": [
+            {
+              "Fields": [
+                ".."
+              ],
+              "Value": "Alex",
+              "Truthy": false
+            },
+          ],
+          "Modify": [
+            {
+              "Fields": [
+                "DisplayName"
+              ],
+              "ValueFromKey": "Sandy",
+            },
+            {
+              "Fields": [
+                "Appearance"
+              ],
+              "ValueFromKey": "Sandy",
+            },
+            {
+              "Fields": [
+                "TextureName"
+              ],
+              "ValueFromKey": "Sandy",
+            },
+            {
+              "Fields": [
+                "MugShotSourceRect"
+              ],
+              "ValueFromKey": "Sandy",
+            },
+            {
+              "Fields": [
+                "Size"
+              ],
+              "ValueFromKey": "Sandy",
+            },
+            {
+              "Fields": [
+                "FriendsAndFamily",
+                "Sandy"
+              ],
+              "Value": "Clone"
+            },
+          ]
+        }
+      }
+    },
+    {
+      "Action": "EditData",
+      "Target": "TheContentModdersYearnForThe/Foreach",
+      "Entries": {
+        // do a stronger sandification
+        "{{ModId}}_Sandifier_Sprites": {
+          "Target": "Characters/",
+          "TargetIsPrefix": true,
+          "CopyFromAsset": "Characters/Sandy",
+        },
+        "{{ModId}}_Sandifier_Portraits": {
+          "Target": "Portraits/",
+          "TargetIsPrefix": true,
+          "CopyFromAsset": "Portraits/Sandy"
+        }
+      },
+      "When": {
+        "SandificationLevel": "SSS"
+      }
+    },
+    {
+      "Action": "EditData",
+      "Target": "TheContentModdersYearnForThe/Foreach",
+      "Fields": {
+        "{{ModId}}_Sandifier": {
+          // Only the Boys are Sandy (Alex is still Josh though)
+          "Filter": [
+            {
+              "Fields": [
+                ".."
+              ],
+              "Value": "Alex",
+              "Truthy": false
+            },
+            {
+              "Fields": [
+                "Gender"
+              ],
+              "Value": "Male",
+            },
+          ]
+        }
+      },
+      "When": {
+        "SandificationLevel": "S"
+      }
+    }
+  ]
+}
