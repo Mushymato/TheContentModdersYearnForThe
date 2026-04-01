@@ -45,6 +45,21 @@
             },
           ]
         },
+        "{{ModId}}_Joshed_Mail": {
+          "Precedence": 1,
+          "Target": "Data/mail",
+          "Modify": [
+            {
+              "Fields": [
+                {
+                  "Match": "{{i18n:Alex}}",
+                  "Split": "(\\[\\#\\])"
+                }
+              ],
+              "Value": "{{i18n:Josh}}"
+            },
+          ]
+        },
       }
     },
   ]

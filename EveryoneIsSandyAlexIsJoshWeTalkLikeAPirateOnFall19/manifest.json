@@ -2,7 +2,7 @@
   "$schema": "https://smapi.io/schemas/manifest.json",
   "Name": "Everyone Is Sandy But Alex Is Josh And We Talk Like A Pirate On Fall 19",
   "Author": "mushymato",
-  "Version": "1.0.0",
+  "Version": "1.0.1",
   "Description": "coming next april 1st: the pirate who is really into graph theory meets an yeehaw saying cowboy who knows quantum computing and then they kiss",
   "UniqueID": "mushymato.EveryoneIsSandyAlexIsJoshWeTalkLikeAPirateOnFall19",
   "MinimumApiVersion": "4.0.0",
